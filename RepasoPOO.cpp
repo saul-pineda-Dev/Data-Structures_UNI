@@ -25,7 +25,21 @@ private:
 
     // Métodos
 public:
-    void asignarNombre(string nom)
+   CCuenta()
+    {
+      saldo = 0;
+      tipoDeInteres = 0;
+    }
+
+   CCuenta(string nom, string cue, double sal, double tipo)
+      {
+         asignarNombre(nom);
+         asignarCuenta(cue);
+         saldo = 0; ingreso(sal);
+         asignarTipoDeInteres(tipo);
+      }
+   
+   void asignarNombre(string nom)
     {
         if (nom.length() == 0)
         {
@@ -95,3 +109,10 @@ public:
         return tipoDeInteres;
     }
 };
+
+int main()
+{
+     CCuenta cuenta01;
+     CCuenta cuenta02("Saul Pineda", "001", 0, 0);
+   return 0;
+}
